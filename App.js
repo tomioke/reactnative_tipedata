@@ -9,8 +9,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-
-
   // Tipe data string
   let nama = 'Tomi Irvan Oktavianto';
 
@@ -80,6 +78,28 @@ import {
             Info lengkap teman ke-2: {teman[1].jeneng} | usia teman:{" "}
             {teman[1].umure}
           </Text>
+
+          <FlatList>
+            data={tinggi} renderItem=
+            {({ item, index }) => (
+              <Text>
+                Index ke-{index}, mempunyai nilai: {item}
+              </Text>
+            )}
+          </FlatList>
+
+          <FlatList>
+            data={teman} renderItem=
+            {({ item, index }) => (
+              <Text>
+                Nama temanku adalah: {item.jeneng}, dan umurnya: {item.umure}
+              </Text>
+            )}
+          </FlatList>
+
+          <TouchableOpacity onPress={() =>this.alert01}>
+              <Text>HITUNG SEKARANG</Text>
+          </TouchableOpacity>
         </View>
       );
     }
